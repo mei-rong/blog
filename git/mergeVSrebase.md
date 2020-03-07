@@ -35,4 +35,4 @@ rebase from other branch to the current
 > git rebase -i {commit id}  
 > **Change "pick" to "f" (drop the commit meaasge) if you don't want them in the log**  
 > **change "pick" to "r" if you want to change the message**  
-> Save and push
+Save and push

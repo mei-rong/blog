@@ -25,9 +25,9 @@
 
 ### To connect to the ssl postgres, certificate maybe required from client.
 
-Connect in verify-ca mode:
-Copy the root.crt from server to the client
-postgresql://${DATABASE_HOST}:${DATABASE_PORT}/postgres?ssl=true&sslmode=verify-ca&sslrootcert=${DATABASE_CERTIFICATE}"
+Connect in verify-ca mode:  
+> Copy the root.crt from server to the client  
+> postgresql://${DATABASE_HOST}:${DATABASE_PORT}/postgres?ssl=true&sslmode=verify-ca&sslrootcert=${DATABASE_CERTIFICATE}"
 
 Connect in verify-full mode:
 Here I make certificates on the server side and pass it to the client
