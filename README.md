@@ -6,8 +6,8 @@
 [oracle ssl on](https://mei-rong.github.io/notes/database/oracle_ssl_on)
 ## Git
 [merge vs rebase](https://mei-rong.github.io/notes/git/mergeVSrebase)
+## JS
+[regex](https://mei-rong.github.io/notes/js/regex)
+
 ## Others
-[self-signed certificate based on openssl](https://mei-rong.github.io/notes/selfSignedCrtBasedOnOpenssl)
-
-
-
+[self-signed certificate based on openssl](https://mei-rong.github.io/notes/others/selfSignedCrtBasedOnOpenssl)
