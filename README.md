@@ -7,7 +7,7 @@
 ## Git
 [merge vs rebase](https://mei-rong.github.io/notes/git/mergeVSrebase)
 ## JS
-[regex](https://mei-rong.github.io/notes/js/regex)
-
+[regex](https://mei-rong.github.io/notes/js/regex)  
+[promise finally vs done](https://mei-rong.github.io/notes/js/promise_finally&done)
 ## Others
 [self-signed certificate based on openssl](https://mei-rong.github.io/notes/others/selfSignedCrtBasedOnOpenssl)
