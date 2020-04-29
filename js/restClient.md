@@ -1,4 +1,4 @@
-#.http file for Visual Studio Code plugin: Rest Client
+# .http file for Visual Studio Code plugin: Rest Client
 
 ```
 @host=localhost
