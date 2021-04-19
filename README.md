@@ -9,6 +9,6 @@
 ## JS
 [regex](https://meirongding.github.io/notes/js/regex)  
 [promise finally vs done](https://meirongding.github.io/notes/js/promise_finally&done)  
-[rest client](https://meirongdingg.github.io/notes/js/restClient)
+[rest client](https://meirongding.github.io/notes/js/restClient)
 ## Others
 [self-signed certificate based on openssl](https://meirongding.github.io/notes/others/selfSignedCrtBasedOnOpenssl)
