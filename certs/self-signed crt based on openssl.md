@@ -32,5 +32,5 @@ server.key and server.crt are the ones will be used
 You can merge them to PEM:
 > cat server.key server.crt > server.pem
 
-![](https://mei-rong.github.io/notes/images/self_signed_crt.png)
+![](https://meirongding.github.io/notes/images/self%20signed%20crt.png)
 

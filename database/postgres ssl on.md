@@ -1,5 +1,5 @@
 ## Postgres 9.6 windows connected by client on windows
-[Official document](http://www.postgres.cn/docs/9.4/ssl-tcp.html)
+[Official document](http://www.postgres.cn/docs/9.4/ssl-tcp.html)  
 [Reference URL](https://postgresrocks.enterprisedb.com/t5/EDB-Guides/How-to-setup-SSL-authentication/ba-p/1647)
 
 ### To use ssl, you need following configuration:
@@ -13,7 +13,7 @@
 > (Delete password)openssl rsa -in server.key -out server.key  
 > (Create server cetificate)openssl req -new -key server.key -days 3650 -out server.crt -x509
 
-[More operation about certificate](https://mei-rong.github.io/notes/selfSignedCrtBasedOnOpenssl)
+[More operation about certificate](https://meirongding.github.io/notes/certs/self-signed%20crt%20based%20on%20openssl)
 
 3.Configure ssl_ca_file
 > (Create root certificate)copy server.crt root.crt  
