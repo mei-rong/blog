@@ -13,6 +13,26 @@ or select the wallet and add one
 ```
 ### 3. Export the request file as user.csr(It'll be signed by ca)
 ### 4. Save the wallet created(**Save it under the default folder or you'll get error when used**)
+```
+Update:
+
+If wallet file access denied, 
+![](https://meirongding.github.io/notes/images/filepermission.png)
+
+you'll get:
+C:\WINDOWS\system32>lsnrctl stop
+
+LSNRCTL for 64-bit Windows: Version 19.0.0.0.0 - Production on 16-SEP-2021 16:05:58
+
+Copyright (c) 1991, 2019, Oracle. All rights reserved.
+
+Connecting to (DESCRIPTION=(ADDRESS=(PROTOCOL=TCPS)(HOST=xxx)(PORT=2484)))
+ORA-28864: SSL connection closed gracefully
+TNS-12560: TNS:protocol adapter error
+TNS-00542: SSL Handshake failed 64-bit Windows Error: 28864: Unknown error
+
+So you can use other directory or set directory permission, or copy file out to other file and then copy in, or set file permission
+```
 ### 5. Make "Wallet" auto login(Or you'll get error when connect to the DB)
 ```
 Check the checkbox under the wallet tab
@@ -55,18 +75,18 @@ WALLET_LOCATION =
 ```
 ### Create ssl listener
 ```
-Net Manager > Oracle Net configuration > local > listeners > LISTENER > choose SSL的TCP/IP with SSL and recommend use 2482
+Net Manager > Oracle Net configuration > local > listeners > LISTENER > choose TCP/IP with SSL and recommend use 2482
 ```
 **Now you can check listener.ora:**
 ```
 LISTENER =
    (DESCRIPTION =
-       (ADDRESS = (PROTOCOL = TCPS)(HOST = zhoujunhe)(PORT = 2484))
+       (ADDRESS = (PROTOCOL = TCPS)(HOST = xxx)(PORT = 2484))
    )
 ```
 and sqlnet.ora：
 ```
-SQLNET.AUTHENTICATION_SERVICES= (BEQ, **TCPS**, NTS)
+SQLNET.AUTHENTICATION_SERVICES= (BEQ, TCPS, NTS)
 ```
 ### Configure static listener service for database(because PMON may not register the ssl port 2484)
 ```
@@ -77,7 +97,7 @@ Net Manager > Oracle Net configuration > local > listeners > LISTENER > databse 
 SID_LIST_LISTENER =
    (SID_LIST =
        (SID_DESC =
-           (GLOBAL_DBNAME = ora10g.unimassystem.com)
+           (GLOBAL_DBNAME = ora10g.xxx.net)
            (ORACLE_HOME = D:\oracle\product\10.2.0\db_1)
            (SID_NAME = ora10g)
        )
@@ -86,3 +106,10 @@ SID_LIST_LISTENER =
 ### Restart listener
 
 ## Now you can use oracle on ssl
+```
+Import ca to java keystore
+
+keytool -delete -alias oracle_19c_ca -keystore "C:\Program Files\Java\jdk1.8.0_291\jre\lib\security\cacerts" -storepass changeit
+
+keytool -noprompt -importcert -file "C:\Users\dingmei\Desktop\ca.crt" -alias oracle_19c_ca -keystore "C:\Program Files\Java\jdk1.8.0_291\jre\lib\security\cacerts" -storepass changeit -deststoretype JKS
+```
